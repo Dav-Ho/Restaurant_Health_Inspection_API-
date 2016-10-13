@@ -1,8 +1,25 @@
 Test Passed!
 
 <div ng-app="app">
-{{ 1 + 1 }}
-<div ng-controller="restaurants_ctrl">
-   <p>{{ restaurants }}</p>
- </div>
+  <div ng-controller="restaurants_ctrl">
+      <p>{{ restaurants[0] }}</p>
+
+    <div ng-repeat="restaurant in restaurants">
+      <div>
+        <h2>Name: {{ restaurant.dba }}</h2>
+        <h3>Cuisine Type: {{ restaurant.cuisine_description }}</h3>
+        <h3>Address: {{ restaurant.building }} {{restaurant.street}}, {{restaurant.boro}}, {{restaurant.zipcode}}</h3>
+        <h3>Contact: {{restaurant.phone}}
+        <h3>Inspection Date: {{restaurant.inspection_date}}</h3>
+        <h3>Record Date: {{restaurant.record_date}}</h3>
+        <h3>Grade Date: {{restaurant.grade_date}}, Grade: {{restaurant.grade}}</h3>
+      </div>
+          <ul>
+        <h3>Violation level: {{restaurant.critical_flag }}</h3>
+        <h3>Violation Code: {{restaurant.violation_code}}<h3>
+        <li>{{ restaurant.violation_description }}</li>
+          </ul>
+
+    </div>
+  </div>
 </div>
